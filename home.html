@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Random Cat Photos</title>
+        <link rel="stylesheet" href="style.css">
+		
+	</head>
+	<body onload="generateCatPhotos(8)">
+        <h1>For the love of cats!</h1>
+        <p>“In ancient times cats were worshipped as gods; they have not forgotten this.”</p>
+		<div id="photos-container"></div>
+		<div class="footer-text">
+			<p>
+				Made with <span>&hearts;</span> by
+				<a href="https://github.com/Karthick-J-11">KJ</a>
+			</p>
+		</div>
+		<script>
+			function generateCatPhotos(numberOfPhotos) {
+				const catPhotos = [
+                    'https://cataas.com/cat/cute/says/hello',
+					'https://cataas.com/cat',
+					'https://cataas.com/cat/cute',
+					'https://cataas.com/cat/gif',
+					'https://cataas.com/cat?filter=sepia',
+                    'https://cataas.com/cat',
+					'https://cataas.com/cat',
+					'https://cataas.com/cat/cute',
+					'https://cataas.com/cat/gif',
+					'https://cataas.com/cat?filter=sepia',
+                    'https://cataas.com/cat/cute',
+					'https://cataas.com/cat',
+					'https://cataas.com/cat/cute',
+					'https://cataas.com/cat/gif',
+					'https://cataas.com/cat?filter=sepia'
+				];
+				const photosContainer = document.getElementById('photos-container');
+				photosContainer.innerHTML = '';
+				for (let i = 0; i < numberOfPhotos; i++) {
+					const randomIndex = Math.floor(Math.random() * catPhotos.length);
+					const catPhoto = catPhotos[randomIndex];
+					photosContainer.innerHTML += `<img src="${catPhoto}" />`;
+				}
+			}
+		</script>
+	</body>
+</html>

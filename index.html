@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Introduction</title>
+		<style>
+			a {
+				text-decoration: none;
+				color: rgb(7, 8, 8);
+			}
+
+			a:hover {
+				color: rgb(12, 154, 201);
+			}
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				height: 100vh;
+				background-color: lightgray;
+				overflow-y: hidden;
+			}
+			.intro-container {
+				text-align: center;
+				flex: 10;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+			h1 {
+				font-size: 46px;
+				margin-bottom: 5px;
+				color: rgb(7, 6, 6);
+			}
+			button {
+				padding: 10px 20px;
+				font-size: 18px;
+				background-color: lightblue;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				margin-top: 20px;
+			}
+
+			button:hover {
+				background-color: rgb(12, 154, 201);
+				color: rgb(230, 222, 222);
+			}
+			.counter {
+				font-size: 24px;
+				margin-top: 20px;
+			}
+
+			.footer-text {
+				text-align: center;
+				flex: 1;
+			}
+
+			span {
+				color: red;
+				font-size: 1.3rem;
+			}
+		</style>
+	</head>
+	<body onload="startCountdown(5)">
+		<div class="intro-container">
+			<h1>Hi, Tess!</h1>
+			<p>I'd like to welcome you to the world of cats.</p>
+			<button onclick="location.href='home.html'">Enter the site</button>
+			<div class="counter"></div>
+		</div>
+		<div class="footer-text">
+			<p>
+				Made with <span>&hearts;</span> by
+				<a href="https://github.com/Karthick-J-11">KJ</a>
+			</p>
+		</div>
+	</body>
+	<script>
+		function startCountdown(seconds) {
+			const counter = document.querySelector('.counter');
+			let remaining = seconds;
+			const interval = setInterval(() => {
+				counter.innerHTML = `Redirecting in ${remaining} seconds...`;
+				if (--remaining <= 0) {
+					clearInterval(interval);
+					location.href = 'home.html';
+				}
+			}, 5000);
+		}
+	</script>
+</html>
